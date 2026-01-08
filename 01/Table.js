@@ -1,5 +1,8 @@
 import React from 'react';
 import data from "./data.json";
+import TableHeader from './TableHeader';
+import TableBody from './TableBody';
+import TableFooter from './TableFooter';
 
 class Table extends React.Component {
     render() {
@@ -16,64 +19,6 @@ class Table extends React.Component {
             <TableBody fromParent={this.props.data} />
             <TableFooter grandTotal={grandTotal} />
         </table>
-    }
-}
-class TableBody extends React.Component {
-    render() {
-        const { fromParent } = this.props;
-        const body = fromParent.map(item => {
-            return (
-                <tr key={item.id}>
-                    <td>{item.id}</td>
-                    <td>{item.name}</td>
-                    <td>{item.price}</td>
-                    <td>{item.quantity}</td>
-                </tr>
-            )
-        })
-        return <tbody>{body}</tbody>
-    }
-}
-class TableHeader extends React.Component {
-    render() {
-        // const { data } = this.props;
-        // return (
-        //     <thead>
-        //         <tr>
-        //             {data.map(col => {
-        //                 <th>{col.label}</th>
-        //             })}
-        //         </tr>
-        //     </thead>
-        // )
-        return (
-            <tr>
-                <th>Id</th>
-                <th>Nazwa</th>
-                <th>Cena</th>
-                <th>Ilosc</th>
-            </tr>
-        )
-    }
-}
-
-class TableFooter extends React.Component {
-    render() {
-        const { grandTotal } = this.props;
-
-        return (
-            <tfoot>
-                <tr>
-                    <td colSpan="2" style={{
-                        textAlign: "right",
-                        fontWeight: 'bold'
-                    }}>
-                        Suma:
-                    </td>
-                    <td style={{ fontWeight: 'bold' }}>{grandTotal}</td>
-                </tr>
-            </tfoot>
-        );
     }
 }
 
