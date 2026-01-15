@@ -36,6 +36,8 @@ class App extends React.Component {
             <section>
                 <Category addToCart={this.addToCart} products={products} />
                 <Cart removeFromCart={this.removeFromCart} products={this.state.cart} />
+                {/* products={this.state.cart} przekazane do Cart */}
+                {/* <Product data={products} /> */}
 
             </section>
         )

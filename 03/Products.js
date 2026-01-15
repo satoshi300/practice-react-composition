@@ -2,6 +2,8 @@ import React from 'react';
 
 class Products extends React.Component {
     render() {
+        // isCart i products z Cart data={products} isCart={true}  
+        // data i addToCart z Category  <Products data={products} addToCart={addToCart} />
         const { data, isCart, addToCart, removeFromCart } = this.props;
         const items = data.map(item => {
             if (!isCart) {
